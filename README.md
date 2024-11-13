@@ -17,5 +17,47 @@ The Car Rental and Booking System is a comprehensive web application designed to
 
 7.Maven for Dependency Management: Maven streamlines the build process, making the development workflow smoother by efficiently managing project dependencies.
 
+Database Schema
+1.Create Database:
+CREATE DATABASE car_rental_system;
+USE car_rental_system;
+
+2.Cars Table:
+CREATE TABLE cars (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    make VARCHAR(100) NOT NULL,
+    model VARCHAR(100) NOT NULL,
+    year INT NOT NULL,
+    price DECIMAL(10, 2) NOT NULL,
+    availability BOOLEAN DEFAULT TRUE,  -- TRUE means available, FALSE means rented
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+3.Customer table :
+CREATE TABLE customers (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    first_name VARCHAR(100) NOT NULL,
+    last_name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    phone VARCHAR(15) NOT NULL,
+    address TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
+4.Booking Table:
+CREATE TABLE bookings (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    car_id INT NOT NULL,
+    customer_id INT NOT NULL,
+    start_date DATE NOT NULL,
+    end_date DATE NOT NULL,
+    total_price DECIMAL(10, 2) NOT NULL,
+    status ENUM('booked', 'completed', 'cancelled') DEFAULT 'booked',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (car_id) REFERENCES cars(id) ON DELETE CASCADE,
+    FOREIGN KEY (customer_id) REFERENCES customers(id) ON DELETE CASCADE
+);
+
 
 This system demonstrates skills in full-stack development, database management, and front-end design, providing a real-world example of a functional, user-centered web application. It effectively integrates essential web technologies and is scalable for future enhancements like payment gateways and automated notifications.
