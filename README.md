@@ -18,6 +18,8 @@ The Car Rental and Booking System is a comprehensive web application designed to
 7.Maven for Dependency Management: Maven streamlines the build process, making the development workflow smoother by efficiently managing project dependencies.
 
 Database Schema
+
+
 1.Create Database:
 CREATE DATABASE car_rental_system;
 USE car_rental_system;
@@ -58,6 +60,54 @@ CREATE TABLE bookings (
     FOREIGN KEY (car_id) REFERENCES cars(id) ON DELETE CASCADE,
     FOREIGN KEY (customer_id) REFERENCES customers(id) ON DELETE CASCADE
 );
+
+🗂️ Project Structure
+---
+
+## 🗂️ **Project Structure**
+
+```
+online-car-dealership/
+    ├── src/
+    │    ├── com/
+    │    │    ├── cardealership/
+    │    │    │    ├── Car.java
+    │    │    │    ├── CarDAO.java
+    │    │    │    ├── InventoryDAO.java
+    │    │    │    └── DBConnection.java
+    ├── lib/
+    │    └── mysql-connector-java-x.x.x.jar (MySQL JDBC Driver)
+    ├── assets/
+    │    └── database-connection-success.png
+    ├── .gitignore
+    ├── README.md
+    └── Main.java
+├── src/
+│   └── com/
+│       └── cardealership/
+│           ├── Car.java
+│           ├── CarDAO.java
+│           ├── InventoryDAO.java
+│           └── DBConnection.java
+├── lib/
+│   └── mysql-connector-java-x.x.x.jar (MySQL JDBC Driver)
+├── assets/
+│   └── database-connection-success.png
+├── .gitignore
+├── README.md
+└── Main.java
+```
+## 🚀 **Technologies Used**
+
+- **Java (JDK)**: Backend logic.
+- **Java (JDK)**: Backend development.
+- **JDBC**: Database connectivity.
+- **MySQL**: Database management.
+- **MySQL**: Database storage.
+- **VS Code**: Development environment.
+- **MySQL JDBC Driver**: For connecting Java to MySQL.
+- **MySQL JDBC Driver**: Connects Java to MySQL.
+
 
 
 This system demonstrates skills in full-stack development, database management, and front-end design, providing a real-world example of a functional, user-centered web application. It effectively integrates essential web technologies and is scalable for future enhancements like payment gateways and automated notifications.
