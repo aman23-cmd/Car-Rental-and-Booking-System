@@ -20,13 +20,8 @@ The Car Rental and Booking System is a comprehensive web application designed to
 
 ## 🛠️ **Database Schema**
 
-
-1.Create Database:
-CREATE DATABASE car_rental_system;
-USE car_rental_system;
-
-2.Cars Table:
-CREATE TABLE cars (
+1. Cars Table 🚙
+   CREATE TABLE cars (
     id INT AUTO_INCREMENT PRIMARY KEY,
     make VARCHAR(100) NOT NULL,
     model VARCHAR(100) NOT NULL,
@@ -36,8 +31,8 @@ CREATE TABLE cars (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-3.Customer table :
-CREATE TABLE customers (
+2. Customers Table 👤
+   CREATE TABLE customers (
     id INT AUTO_INCREMENT PRIMARY KEY,
     first_name VARCHAR(100) NOT NULL,
     last_name VARCHAR(100) NOT NULL,
@@ -46,10 +41,8 @@ CREATE TABLE customers (
     address TEXT,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
-
-
-4.Booking Table:
-CREATE TABLE bookings (
+3. Bookings Table 📅
+   CREATE TABLE bookings (
     id INT AUTO_INCREMENT PRIMARY KEY,
     car_id INT NOT NULL,
     customer_id INT NOT NULL,
@@ -61,6 +54,11 @@ CREATE TABLE bookings (
     FOREIGN KEY (car_id) REFERENCES cars(id) ON DELETE CASCADE,
     FOREIGN KEY (customer_id) REFERENCES customers(id) ON DELETE CASCADE
 );
+🔗 Relationships
+One-to-Many between cars and bookings (one car can have multiple bookings).
+One-to-Many between customers and bookings (one customer can have multiple bookings).
+Cascade Deletes ensure that deleting a car or customer automatically removes related bookings.
+
 
 🗂️ Project Structure
 ---
@@ -109,6 +107,8 @@ online-car-dealership/
 - **MySQL JDBC Driver**: For connecting Java to MySQL.
 - **MySQL JDBC Driver**: Connects Java to MySQL.
 
+  ✨ Contributing
+Feel free to contribute by forking this repository and creating a pull request with your improvements or bug fixes.
 
 
 This system demonstrates skills in full-stack development, database management, and front-end design, providing a real-world example of a functional, user-centered web application. It effectively integrates essential web technologies and is scalable for future enhancements like payment gateways and automated notifications.
