@@ -17,7 +17,8 @@ The Car Rental and Booking System is a comprehensive web application designed to
 
 7.Maven for Dependency Management: Maven streamlines the build process, making the development workflow smoother by efficiently managing project dependencies.
 
-Database Schema
+
+## 🛠️ **Database Schema**
 
 
 1.Create Database:
